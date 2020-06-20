@@ -16,10 +16,13 @@ This site will solve the problem of boredom in the time of pandemics!  It will a
 Minimum MVP Definition
 
 Pg 1
+
  - Player Name can be entered and will be saved
  - Two settings available for card art - players choice
  - Size of game can be set by player (choice of # of pairs)
+ 
 Pg 2
+
  - Player name will persist on this page and be visible somewhere
  - Number of cards in game will match the setting chosen by the player
  - Card art will match the setting chosen by the player
@@ -29,6 +32,8 @@ Pg 2
     - Check for a match at every second click - if no match, cards will return to face down, else cards will be removed from the game.
     - A timer will begin with first click and will end when the last pair is matched
   - Pg 3 will be available once a game is completed
+  
 Pg 3
+
   - Display players name and final time
   - Display an ‘About Me’ segment for each team member
