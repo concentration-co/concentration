@@ -41,3 +41,11 @@ Pg 3
 Domain Model
 
 ![Domain Model](cascadia-concentation-domain-model.png)
+
+Wireframes
+
+![wireframe1](wireframe1-homepage.jpeg)
+
+![wireframe2](wireframe2-game.jpeg)
+
+![wireframe3](wireframe3-results.jpeg)
