@@ -13,33 +13,45 @@ This site will solve the problem of boredom in the time of pandemics! It will al
 Our project is a culmination of our group's mastery of JavaScript. We are proud to showcase our skills and teamworking abilities. You might also have fun playing the game.
 
 ## IN - What will your product do
+
  - Give a user a chance to choose the theme of their cards
  - Allow the user to provide ther name for a personlized experience
  - Show the user their "score"-how much time elapsed to solve
  
  ## OUT - What will your product not do
+ 
  - Not be optimized for mobile applications
  - There will be no collection of others' scores
  
  ## MVP
+ 
  - The home page will have a place to enter the user name and two toggle choices. One for the card back and one for how many cards wil be in the grid.
  - The game page will have the cards, and a timer that starts when the first card is clicked and ends when the lst pair is made.
+ - The game grid will contain 6 pairs.
  - The score page will diplay the time that it took for a player to complete the immediatley preceding game. 
  - The score page will also have a picture of each of the team members with a popout that has some information about that person.
  
  ## Stretch Goals
+ 
+ - Global leader score board
+ - Let users upload their own custom card back
+ - Allow for decoy cards for increased difficulty
+ - Make game compatible for mobile devices
+ 
+## What stretch goals are you going to aim for?
+
  - Additonal style choices for the cards
  - Toggle visibility of timer while playing the game 
  - Display past game scores from local storage
  - More than two choices for game grid layout, i.e., more cards in the grid
-
-## What stretch goals are you going to aim for?
-The team is discussing this.
+ - Animation when a two cards are chosen - whether or not it's a match
+ - Shuffle when game starts
+ - Time stamp for when clock stops to track when a score is acheived
 
 ## Functional Requirements
 
-A user can enter their name.
-A user can choose what theme their cards will have from a limited selection.
+ - A user can enter their name.
+ - A user can choose what theme their cards will have from a limited selection.
 
 ## Data Flow
 
