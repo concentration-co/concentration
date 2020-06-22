@@ -28,17 +28,17 @@ Our project is a cumlimation of our group's mastery of JavaScript. We are proud 
  - The score page will also have a picture of each of the team members with a popout that has some information about that person.
  
  ## Stretch Goals
- - Additonal style for game
+ - Additonal style choices for the cards
  - Toggle visibility of timer while playing the game 
  - Display past game scores from local storage
- - More than two choices for game grid layout
+ - More than two choices for game grid layout, i.e., more cards in the grid
 
 ## What stretch goals are you going to aim for?
 
 ## Functional Requirements
 
 A user can enter their name.
-A user can choose what theme their cards will have from a limited selection
+A user can choose what theme their cards will have from a limited selection.
 
 ## Data Flow
 
