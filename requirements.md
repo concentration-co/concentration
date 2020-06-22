@@ -37,7 +37,7 @@ Our project is a cumlimation of our group's mastery of JavaScript. We are proud 
 
 ## Functional Requirements
 
-A user can enter their name
+A user can enter their name.
 A user can choose what theme their cards will have from a limited selection
 
 ## Data Flow
