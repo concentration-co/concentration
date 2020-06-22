@@ -32,3 +32,16 @@ Our project is a cumlimation of our group's mastery of JavaScript. We are proud 
  - Toggle visibility of timer while playing the game 
  - Display past game scores from local storage
  - More than two choices for game grid layout
+
+## What stretch goals are you going to aim for?
+
+## Functional Requirements
+
+A user can enter their name
+A user can choose what theme their cards will have from a limited selection
+
+## Data Flow
+
+The user enters the home page and is presented with a place to enter their name and to choose a theme for the virtaul cards they will be controlling.
+After making their choices, they will be automatically sent to the second page where there will be a brief explanation of how the game works. The game will start whe the user clicks on the first card, and ends when the last pair is matched. For every correct match, both cards will go away leaving an empty spot with a placeholder.
+When the game is over, the user has the option to navigate to the score page that will display the time the elapsed while they played. There will also be a sidebar with images of all each of the four contributors and an option for the user to learn more about each by clicking on their images. 
