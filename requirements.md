@@ -34,6 +34,7 @@ Our project is a cumlimation of our group's mastery of JavaScript. We are proud 
  - More than two choices for game grid layout, i.e., more cards in the grid
 
 ## What stretch goals are you going to aim for?
+The team is discussing this.
 
 ## Functional Requirements
 
