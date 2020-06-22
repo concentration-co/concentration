@@ -10,7 +10,7 @@ This site will solve the problem of boredom in the time of pandemics! It will al
 
 ## Why should we care about your product?
 
-Our project is a cumlimation of our group's mastery of JavaScript. We are proud to showcase our skills and teamworking abilities. You might also have fun playing the game.
+Our project is a culmination of our group's mastery of JavaScript. We are proud to showcase our skills and teamworking abilities. You might also have fun playing the game.
 
 ## IN - What will your product do
  - Give a user a chance to choose the theme of their cards
