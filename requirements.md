@@ -28,4 +28,7 @@ Our project is a cumlimation of our group's mastery of JavaScript. We are proud 
  - The score page will also have a picture of each of the team members with a popout that has some information about that person.
  
  ## Stretch Goals
- - 
+ - Additonal style for game
+ - Toggle visibility of timer while playing the game 
+ - Display past game scores from local storage
+ - More than two choices for game grid layout
