@@ -37,3 +37,7 @@ Pg 3
 
   - Display players name and final time
   - Display an ‘About Me’ segment for each team member
+  
+Domain Model
+
+![Domain Model](cascadia-concentation-domain-model.png)
