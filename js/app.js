@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+var theme = 'blue';
+
 'use strict';
 
 // ====================================Card 1 - Colleen====================================
@@ -20,15 +23,37 @@
 // =====================================================================================
 // ====================================Card 2 - Rob===========================================
 
-// TODO: Provide a selector to choose between 2 potential themes
-// -Style Selector will be radio style (can only choose 1 option)
-// -Target HTML ID _________ where the theme will be chosen
 
-// TODO: Style Selector will default to one of the options if no choice is made.
-// -Set default value in Constructor Function
+var form = document.getElementById('nameForm');
 
-// TODO: Style Selection will be saved to local storage
-// -Will take place with 'Begin the Game' Button actions
+function handleForm(event) {
+
+  var themeRadios = document.getElementsByName('theme');
+
+  for (var i = 0, length = themeRadios.length; i < length; i++) {
+
+    if (themeRadios[i].checked) {
+
+      alert(themeRadios[i].value);
+
+      theme = themeRadios[i].value;
+      // This is the Theme for the cards
+
+      break;
+    }
+  }
+
+  console.log('Hello World');
+
+  console.log(theme);
+
+  event.preventDefault();
+
+}
+
+form.addEventListener('submit', handleForm);
+
+// Deffault is 'blue'
 
 // =====================================================================================
 // ====================================Card 3 - Jen===========================================

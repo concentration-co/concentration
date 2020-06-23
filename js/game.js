@@ -1,5 +1,11 @@
 'use strict';
 
+var startTime;
+
+var endTime;
+
+var finalTime;
+
 // ====================================Card 5 - Paul====================================
 
 // TODO: Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
@@ -19,6 +25,36 @@ TODO: // Append name & difficulty & button (Go Home) in a sidebar
 
 // =====================================================================================
 // ====================================Card 6 - Rob===========================================
+
+var card = document.getElementsByClassName('cards1');
+
+function handleForm(event) {
+
+  var themeRadios = document.getElementsByName('theme');
+
+  for (var i = 0, length = themeRadios.length; i < length; i++) {
+
+    if (themeRadios[i].checked) {
+
+      alert(themeRadios[i].value);
+
+      theme = themeRadios[i].value;
+      // This is the Theme for the cards
+
+      break;
+    }
+  }
+
+  console.log('Hello World');
+
+  console.log(theme);
+
+  event.preventDefault();
+
+}
+
+form.addEventListener('submit', handleForm);
+
 
 TODO: // Timer begins counting when the first card is clicked
 // -Add Event Listener that targets 'click' on any card
