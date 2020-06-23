@@ -1,12 +1,16 @@
 'use strict';
+// ====================================Card 8===========================================
 
 TODO: // Fill results will display the User Name, Difficulty, and Final Time
 // -Destringify User Object from local storage
-// -Parse User Object from local storage to access User Name, Difficulty and High Score
+// -Parse User Object from local storage to access User Name, Difficulty and Time
 // -Add relevant content to results form on about.html
 
 TODO: // A ‘Play Again’ Option will display beneath the results that - if clicked - will link back to the landing page.
 // Use same button as in game.js => Anchor Tag to index.html
+
+// =====================================================================================
+// ====================================Card 9===========================================
 
 TODO: // Results Page will include an ‘About Me’ sidebar that will display images and names of all 4 collaborators
 

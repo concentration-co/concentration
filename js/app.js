@@ -1,4 +1,7 @@
 'use strict';
+
+// ====================================Card 1====================================
+
 // TODO: Render personalized greeting using User Name
 // -Check for User object in local storage - if present, destringify to access User Name
 // -Stretch: Add option to 'change' user if new player
@@ -12,7 +15,10 @@
 // -form validation will prevent blank space only
 
 // TODO: User Name will be saved to local storage
-// -new constructor function created for User (User Name / Difficulty Selected / Theme Selected / High Score ((Array as Stretch Goal)))
+// -new constructor function created for User (User Name / Difficulty Selected / Theme Selected / Final Time ((Array as Stretch Goal)))
+
+// =====================================================================================
+// ====================================Card 2===========================================
 
 // TODO: Provide a selector to choose between 2 potential themes
 // -Style Selector will be radio style (can only choose 1 option)
@@ -24,6 +30,9 @@
 // TODO: Style Selection will be saved to local storage
 // -Will take place with 'Begin the Game' Button actions
 
+// =====================================================================================
+// ====================================Card 3===========================================
+
 // TODO: Provide a selector to choose between 2 potential grid sizes
 // -Difficulty Selector will be radio style (can only choose 1 option)
 // -Target HTML ID _________ where the difficulty will be chosen
@@ -34,6 +43,9 @@
 // TODO: Difficulty Selection will be saved to local storage.
 // -Will take place with 'Begin the Game' Button actions
 
+// =====================================================================================
+// ====================================Card 4===========================================
+
 // TODO: Provide a button with text indicating that it will ‘Begin the Game’
 // -Target HTML ID ___________ where the button to begin the game will exist
 
@@ -41,3 +53,4 @@
 // -stringify the User Object
 // -set User Object to local storage
 // -redirect user to game.html
+// =====================================================================================
