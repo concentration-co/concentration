@@ -1,3 +1,14 @@
+/* Note: Keep global variables organized
+
+Rob TODO:  Apply Theme to styling sheet
+
+Colleen TODO:  Create 3 specific text styles for: Highlights, Paragraphs, & Sections
+
+Reminder: Notate new styles when pushing your branch
+
+*/
+
+
 *{
   margin: 0;
   padding: 0;
