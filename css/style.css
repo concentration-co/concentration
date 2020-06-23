@@ -1,4 +1,120 @@
+*{
+  margin: 0;
+  padding: 0;
+}
 
+/* Global CSS Variables */
 
+html{
+  background: linear-gradient(-30deg, #2ce88d 12.5%, #11cf73 12.5%, #11cf73 37.5%, #2ce88d 37.5%, #2ce88d 62.5%, #11cf73 62.5%, #11cf73 87.5%, #2ce88d 87.5%);
+  background-size: 100px 58px;
+  background-position: 50px 50px;
+}
 
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+/* Page 1 variables */
+
+#nameInputFormDiv{
+  background-color: honeydew;
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  width: 300px; /* Need a specific value to work */
+  height: 300px;
+  width: 20%;
+  text-align: center;
+  padding: 15px;
+}
+
+/* Page 2 variables */
+
+#gameBoard{
+  position: absolute;
+  border: white 2px solid;
+  height: 90vh;
+  width: 96vw;
+  margin: 1vh;
+  padding: 2vh;
+  min-width: 96wv;
+  min-height: 90vh;
+}
+
+.cards{
+  height: 275px;
+  width: 200px;
+  background-color: #e61c1c;
+  background-image: radial-gradient(circle, #f5f5f5 20%, transparent 10%), radial-gradient(circle, #f5f5f5 20%, transparent 10%);
+  background-size: 50px 50px;
+  background-position: 0 0, 25px 25px;
+  border-radius: 20px;
+  border: solid white 9px;
+  float: left;
+  margin: 30px;
+}
+
+.cards2{
+  height: 275px;
+  width: 200px;
+  background: url(../img/jessica-weiller-kZ8dyUT0h30-unsplash.jpg) no-repeat center center; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  border-radius: 20px;
+  border: solid white 9px;
+  float: left;
+  margin: 30px;
+}
+
+#infoDiv{
+  width: 100px;
+  position: fixed;
+  background-color: honeydew;
+  height: 180px;
+  bottom: 0;
+  right: 0;
+}
+
+/* Page 3 styles */
+
+.aboutMeDiv{
+  right: 8px;
+position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: indigo;
+  border-radius: 50%;
+  border: solid black 3px;
+}
+
+#aboutMe1{
+  top: 100px;
+
+  background-color: rgb(255, 255, 255);
+}
+#aboutMe2{
+  top: 220px;
+
+  background-color: rgb(103, 245, 60);
+}
+#aboutMe3{
+  top: 340px;
+
+  background-color: rgb(83, 95, 204);
+}
+#aboutMe4{
+  top: 460px;
+
+  background-color: rgb(240, 137, 137);
+}
 
