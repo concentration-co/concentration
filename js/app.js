@@ -34,9 +34,20 @@
 // ====================================Card 3 - Jen===========================================
 
 // TODO: Provide a selector to choose between 2 potential grid sizes
-// -Difficulty Selector will be radio style (can only choose 1 option)
-// -Target HTML ID _________ where the difficulty will be chosen
+// Done in HTML -Difficulty Selector will be radio style (can only choose 1 option)
+// -Target HTML name = 'mode' where the difficulty will be chosen
 
+function assignDifficultyToUser(){
+
+  var difficultyElement = document.getElementsByName('mode');
+  for (var i=0; i<difficultyElement.length; i++) {
+    if(difficultyElement[i].checked){
+      //Assign to User Object;
+    }
+  }
+}
+
+assignDifficultyToUser();
 // TODO: Difficulty Selector will default to the ‘easiest’ option if no choice is made.
 // -Set default value in Constructor Function
 
@@ -54,3 +65,4 @@
 // -set User Object to local storage
 // -redirect user to game.html
 // =====================================================================================
+
