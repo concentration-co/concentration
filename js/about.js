@@ -1,5 +1,5 @@
 'use strict';
-// ====================================Card 8===========================================
+// ====================================Card 8 - Colleen===========================================
 
 TODO: // Fill results will display the User Name, Difficulty, and Final Time
 // -Destringify User Object from local storage
@@ -10,7 +10,7 @@ TODO: // A ‘Play Again’ Option will display beneath the results that - if cl
 // Use same button as in game.js => Anchor Tag to index.html
 
 // =====================================================================================
-// ====================================Card 9===========================================
+// ====================================Card 9 - Paul===========================================
 
 TODO: // Results Page will include an ‘About Me’ sidebar that will display images and names of all 4 collaborators
 

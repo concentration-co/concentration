@@ -1,6 +1,6 @@
 'use strict';
 
-// ====================================Card 5====================================
+// ====================================Card 5 - Paul====================================
 
 // TODO: Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
 
@@ -18,7 +18,7 @@ TODO: // Append name & difficulty & button (Go Home) in a sidebar
 // - Timer will be located in the sidebar
 
 // =====================================================================================
-// ====================================Card 6===========================================
+// ====================================Card 6 - Rob===========================================
 
 TODO: // Timer begins counting when the first card is clicked
 // -Add Event Listener that targets 'click' on any card
@@ -42,7 +42,7 @@ TODO: // IF the two flipped cards are NOT a match, both cards will flip back to 
 // -Undo the flip function
 
 // =====================================================================================
-// ====================================Card 7===========================================
+// ====================================Card 7 - Jen===========================================
 
 TODO: // Timer stops when the last pair is confirmed as a match and all cards have been removed from gameplay
 // -Stop Timer

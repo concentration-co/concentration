@@ -1,6 +1,6 @@
 'use strict';
 
-// ====================================Card 1====================================
+// ====================================Card 1 - Colleen====================================
 
 // TODO: Render personalized greeting using User Name
 // -Check for User object in local storage - if present, destringify to access User Name
@@ -18,7 +18,7 @@
 // -new constructor function created for User (User Name / Difficulty Selected / Theme Selected / Final Time ((Array as Stretch Goal)))
 
 // =====================================================================================
-// ====================================Card 2===========================================
+// ====================================Card 2 - Rob===========================================
 
 // TODO: Provide a selector to choose between 2 potential themes
 // -Style Selector will be radio style (can only choose 1 option)
@@ -31,7 +31,7 @@
 // -Will take place with 'Begin the Game' Button actions
 
 // =====================================================================================
-// ====================================Card 3===========================================
+// ====================================Card 3 - Jen===========================================
 
 // TODO: Provide a selector to choose between 2 potential grid sizes
 // -Difficulty Selector will be radio style (can only choose 1 option)
@@ -44,7 +44,7 @@
 // -Will take place with 'Begin the Game' Button actions
 
 // =====================================================================================
-// ====================================Card 4===========================================
+// ====================================Card 4 - Paul ===========================================
 
 // TODO: Provide a button with text indicating that it will ‘Begin the Game’
 // -Target HTML ID ___________ where the button to begin the game will exist
