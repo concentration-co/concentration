@@ -2,15 +2,12 @@
 
 'use strict';
 
-// ====================================Card 1 - Colleen====================================
+// ====================================Card 1 - Paul====================================
 
 // TODO: Render personalized greeting using User Name
 // -Check for User object in local storage - if present, destringify to access User Name
 // -Stretch: Add option to 'change' user if new player
 // -Else: Continue to greeting form
-
-// TODO: Inform the user of the basic rules of the game and that as soon as the following page loads the game will begin
-// -Render a <p> with content explaining the rules of the game in and the purpose of the customization options below
 
 // TODO: Provide a greeting form that can take in a User Name using form validation
 // -Target HTML ID _________ where the user name will be entered
@@ -26,6 +23,8 @@
 
 // =====================================================================================
 // ====================================Card 3 - Jen===========================================
+
+// TODO: Validation of Form
 
 // TODO: Provide a selector to choose between 2 potential grid sizes
 // Done in HTML -Difficulty Selector will be radio style (can only choose 1 option)

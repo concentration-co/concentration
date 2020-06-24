@@ -1,5 +1,5 @@
 'use strict';
-// ====================================Card 8 - Colleen===========================================
+// ====================================Card 8 - Jen===========================================
 
 TODO: // Fill results will display the User Name, Difficulty, and Final Time
 // -Destringify User Object from local storage
