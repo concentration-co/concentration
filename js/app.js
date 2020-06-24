@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-var theme = 'blue';
 
 'use strict';
 
@@ -23,37 +22,7 @@ var theme = 'blue';
 // =====================================================================================
 // ====================================Card 2 - Rob===========================================
 
-
-var form = document.getElementById('nameForm');
-
-function handleForm(event) {
-
-  var themeRadios = document.getElementsByName('theme');
-
-  for (var i = 0, length = themeRadios.length; i < length; i++) {
-
-    if (themeRadios[i].checked) {
-
-      alert(themeRadios[i].value);
-
-      theme = themeRadios[i].value;
-      // This is the Theme for the cards
-
-      break;
-    }
-  }
-
-  console.log('Hello World');
-
-  console.log(theme);
-
-  event.preventDefault();
-
-}
-
-form.addEventListener('submit', handleForm);
-
-// Deffault is 'blue'
+// paul did this for us and thank god (period).
 
 // =====================================================================================
 // ====================================Card 3 - Jen===========================================
