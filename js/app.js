@@ -28,9 +28,20 @@
 // ====================================Card 3 - Jen===========================================
 
 // TODO: Provide a selector to choose between 2 potential grid sizes
-// -Difficulty Selector will be radio style (can only choose 1 option)
-// -Target HTML ID _________ where the difficulty will be chosen
+// Done in HTML -Difficulty Selector will be radio style (can only choose 1 option)
+// -Target HTML name = 'mode' where the difficulty will be chosen
 
+function assignDifficultyToUser(){
+
+  var difficultyElement = document.getElementsByName('mode');
+  for (var i=0; i<difficultyElement.length; i++) {
+    if(difficultyElement[i].checked){
+      //Assign to User Object;
+    }
+  }
+}
+
+assignDifficultyToUser();
 // TODO: Difficulty Selector will default to the ‘easiest’ option if no choice is made.
 // -Set default value in Constructor Function
 
@@ -43,8 +54,35 @@
 // TODO: Provide a button with text indicating that it will ‘Begin the Game’
 // -Target HTML ID ___________ where the button to begin the game will exist
 
-// TODO: When selected, 'Begin the Game' button will save all indicated choices to local storage and then move the user to the Game page
+function User(name, difficulty, theme) {
+  this.name = name;
+  this.difficulty = difficulty;
+  this.theme = theme;
+  this.finalTimes = []; // where to collect their times/scores
+}
+
+var gameStart = document.getElementById('nameForm');
+gameStart.addEventListener('submit', beginningTheGame);
+function beginningTheGame(click){
+  click.preventDefault();
+
+  var newUsername = click.target.fname.value; // OR User.name = ...
+  var newThemeSelect = click.target.theme.value; // OR User.name = ...
+  var newDifficultySelect = click.target.mode.value; // OR difficultySelect = ...
+
+  var newUser = new User(newUsername, newDifficultySelect, newThemeSelect);
+
+  var stringifiedUser = JSON.stringify(newUser);
+  localStorage.setItem('userData', stringifiedUser);
+
+  alert('Okay ' + newUser.name + ' you are ready to play the game? It starts soon as you push the button!');
+
+  window.location.href = 'game.html';
+}
+
+// When selected, 'Begin the Game' button will save all indicated choices to local storage and then move the user to the Game page
 // -stringify the User Object
 // -set User Object to local storage
 // -redirect user to game.html
 // =====================================================================================
+

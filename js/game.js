@@ -133,5 +133,8 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // Users are transported to the final Result Page upon successful completion of the game.
 // - document.createElementByID of Anchor Tag to about.js
 
+// https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
+// window.location.replace(js/about.js)
+
 // =====================================================================================
 
