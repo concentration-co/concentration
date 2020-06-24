@@ -2,10 +2,15 @@
 'use strict';
 
 var startTime;
+var endTime;
+
 
 // Jen, this start time tells us when we click.
 
-var counter = 0;
+var clickCounter = 0;
+var pairCounter = 0;
+var maxPair = 1;
+// TODO: currently, maxPair is hard coded for a 6 pair / 12 card board.  will need to make this variable dynamic if/when this changes
 
 // this makes it so that we only set start time once
 
@@ -44,12 +49,10 @@ var lockBoard = false;
 var firstCard, secondCard;
 
 function flipCard() {
-  counter++;
-  if(counter <= 0){
-    window.startTime = {
-      start: new Date()
-    };
-    window.startTime = new Date();
+  if(clickCounter <= 0){
+    startTime = new Date();
+    console.log('Start Time:', startTime);
+    clickCounter++;
   }
   if (lockBoard) return;
   if (this === firstCard) return;
@@ -65,6 +68,7 @@ function flipCard() {
 
   secondCard = this;
   checkForMatch();
+  checkWinCondition();
 }
 
 function checkForMatch() {
@@ -74,9 +78,11 @@ function checkForMatch() {
 }
 
 function disableCards() {
-  counter++;
+  pairCounter++;
 
   // Jen, make it so that the counter is what tells you when to go to next page: counter = total pairs to match and when met logic to go to about
+
+  // JC: Added a second counter and renamed both - clickCounter will capture the start time, pairCounter will log successful matches and max out at all pairs picked, triggering the end of game conditions
 
 
   console.log('Game time at this match is: ' + startTime);
@@ -123,18 +129,33 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // ====================================Card 7 - Jen===========================================
 
 // Timer stops when the last pair is confirmed as a match and all cards have been removed from gameplay
-// -Stop Timer
-// -Assign Final Time value to User Object.time
+// -Stop Timer : There is no timer running per se, but a final time is captured and recorded
+// -Assign Final Time value to userData.finalTimes - DONE
 // -Remove event listener (Optional)
+function checkWinCondition(){
+// When all pairs are selected (currently hard coded as pairCounter === maxPair) a time stamp is captured
+  if (pairCounter === maxPair){
+    endTime = new Date();
+    console.log('End Time:', endTime);
+  }
+  // Once the end time is captured, a 'score' is deduced by extracting and comparing time codes and converting from milliseconds to seconds.  That value in seconds is added to the userData object
+  if (endTime) {
+    var numStartTime = startTime.getTime();
+    var numEndTime = endTime.getTime();
+    var elapsedTime = numEndTime-numStartTime;
+    var timeInSec = elapsedTime/1000;
+    console.log('Elapsed Time:', timeInSec);
 
-// Final time is saved to local storage
-// - Stringify and update User Object in local storage
+    var stringyUser = localStorage.getItem('userData');
+    var userData = JSON.parse(stringyUser);
 
-// Users are transported to the final Result Page upon successful completion of the game.
-// - document.createElementByID of Anchor Tag to about.js
-
-// https://www.w3schools.com/howto/howto_js_redirect_webpage.asp
-// window.location.replace(js/about.js)
-
+    userData.finalTimes.push(timeInSec);
+    // At this point, we have updated all necessary userData information and are ready to re-stringify it and send it back to local storage
+    stringyUser = JSON.stringify(userData);
+    localStorage.setItem('userData', stringyUser);
+    // And now we send the user on to the About Me page to view their results
+    window.location.href = 'about.html';
+  }
+}
 // =====================================================================================
 
