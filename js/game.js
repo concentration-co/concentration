@@ -19,8 +19,22 @@ console.log('This is when we land on the page but not yet started playing: ' + a
 
 // ====================================Card 5 - Paul====================================
 
-// TODO: Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
+// Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
+
+function Card(number, theme, src) {
+  this.number = number;
+  this.picture = src;
+  this.theme = theme; // this is the picture
+  this.deck = []; // all the compiled cards, the "deck", so to speak
+}
+
+var userFromLocal = localStorage.getitem('userData');
+var gamePlayer = JSON.parse(userFromLocal);
+
 // Fill the board with the number and style of cards selected on the landing page
+
+var cardback = Card.theme;
+// var gameDifficulty = User.;
 // -Retrieve and parse User Object from local storage
 // -Fill game board with Style and Difficulty settings from User Object
 // -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor
