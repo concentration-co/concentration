@@ -4,8 +4,6 @@
 var startTime;
 var endTime;
 
-var stringyUser = localStorage.getItem('userData');
-var userData = JSON.parse(stringyUser);
 
 // Jen, this start time tells us when we click.
 
@@ -52,9 +50,6 @@ var firstCard, secondCard;
 
 function flipCard() {
   if(clickCounter <= 0){
-    // startTime = {
-    //   start: new Date()
-    // };
     startTime = new Date();
     console.log('Start Time:', startTime);
     clickCounter++;
@@ -150,6 +145,10 @@ function checkWinCondition(){
     var elapsedTime = numEndTime-numStartTime;
     var timeInSec = elapsedTime/1000;
     console.log('Elapsed Time:', timeInSec);
+
+    var stringyUser = localStorage.getItem('userData');
+    var userData = JSON.parse(stringyUser);
+
     userData.finalTimes.push(timeInSec);
     // At this point, we have updated all necessary userData information and are ready to re-stringify it and send it back to local storage
     stringyUser = JSON.stringify(userData);
