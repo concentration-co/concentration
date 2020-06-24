@@ -80,6 +80,27 @@ border-radius: 5%;
 }
 
 
+#wrapperDiv3{
+
+
+  margin: 1%;
+  
+  height: 87vh;
+  
+  width: 96%;
+  
+  background: transparent;
+  
+  border: solid white 8px;
+  
+  border-radius: 5%;
+  
+border-bottom: none;
+
+border-top: none;
+
+  }
+
 
 .button {
 
@@ -233,20 +254,22 @@ border-radius: 9%;
 /* This is to flip cards on flip click */
 /* Still working on it, please dont mess w it as im still making images fit*/
 .memory-game {
-  width: 1280px;
+
+  width: 98%;
   height: 890px;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   perspective: 1000px;
 border: none;
+margin-left: 130px;
 }
 
 .memory-card {
   border: none;
-  width: calc(15% - 10px);
-  height: calc(33.333% - 10px);
-  margin: 10px;
+  width: calc(12% - 10px);
+  height: calc(23.333% - 10px);
+  margin: 15px;
   margin-left: 30px;
   margin-right: 30px;
   position: relative;
@@ -270,10 +293,10 @@ border: none;
 .back-face {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 10px;
   position: absolute;
   border-radius: 5px;
-  background:transparent;
+  background: transparent;
   border: none;
   backface-visibility: hidden;
 }
