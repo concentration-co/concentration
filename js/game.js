@@ -19,9 +19,60 @@ console.log('This is when we land on the page but not yet started playing: ' + a
 
 // ====================================Card 5 - Paul====================================
 
-// TODO: Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
-// Fill the board with the number and style of cards selected on the landing page
-// -Retrieve and parse User Object from local storage
+Card.collection = [];
+
+function Card(src, alt, theme) { // Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
+  // this.number = number;
+  this.picture = src; // this is the picture
+  this.theme = theme;
+  this.alt = alt;
+  Card.collection.push(this);
+  // this.deck = []; // all the compiled cards, the "deck", so to speak. Might not need.
+}
+
+function shuffle(array) { //shuffle an array. Known as a Knuth Shuffle. Code snippet from https://github.com/Daplie/knuth-shuffle/blob/master/index.js
+
+  var currentIndex = array.length
+    , temporaryValue
+    , randomIndex
+    ;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+var userFromLocal = localStorage.getItem('userData');
+var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object from local storage
+
+new Card('img/Larch Tree.jpg', 'Larch Tree', gamePlayer.theme);
+new Card('img/PVO Goat 1.jpg', 'White Goat', gamePlayer.theme);
+new Card('WA Flag.png', 'WA Flag', gamePlayer.theme);
+new Card('img/valentin-petkov-FK5uXiCp9-Q-unsplash.jpg', 'Valentin', gamePlayer.theme);
+new Card('img/PVO Goat 5.png', 'Goat', gamePlayer.theme);
+new Card('img/WA Silhouette', 'WA', gamePlayer.theme);
+new Card('img/anastasiya-romanova-GNVr_d4smK0-unsplash.jpg', 'Berries', gamePlayer.theme);
+new Card('img/thomas-lipke-p5nDU-d3Y0s-unsplash.jpg', 'orca', gamePlayer.theme);
+new Card('img/thomas-lipke-p5nDU-d3Y0s-unsplash.jpg', 'Tree Silhouette', gamePlayer.theme);
+new Card('img/thomas-lipke-p5nDU-d3Y0s-unsplash.jpg', 'White Tree Bark', gamePlayer.theme);
+new Card('img/thomas-lipke-p5nDU-d3Y0s-unsplash.jpg', 'White Goad Portrait', gamePlayer.theme);
+new Card('img/mathew-schwartz-OjQgsR1oyEw-unsplash.jpg', 'Bald Eagle', gamePlayer.theme);
+new Card('img/nathan-dumlao-q55cHiz1reM-unsplash.jpg', 'Deer', gamePlayer.theme);
+
+Card.collection = shuffle(Card.collection);
+
+
 // -Fill game board with Style and Difficulty settings from User Object
 // -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor
 // -Fill Array B with an exact copy of Array A cards
