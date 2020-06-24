@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 'use strict';
 
 // ====================================Card 1 - Colleen====================================
@@ -20,15 +22,7 @@
 // =====================================================================================
 // ====================================Card 2 - Rob===========================================
 
-// TODO: Provide a selector to choose between 2 potential themes
-// -Style Selector will be radio style (can only choose 1 option)
-// -Target HTML ID _________ where the theme will be chosen
-
-// TODO: Style Selector will default to one of the options if no choice is made.
-// -Set default value in Constructor Function
-
-// TODO: Style Selection will be saved to local storage
-// -Will take place with 'Begin the Game' Button actions
+// paul did this for us and thank god (period).
 
 // =====================================================================================
 // ====================================Card 3 - Jen===========================================

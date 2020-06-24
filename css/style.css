@@ -45,10 +45,10 @@ html{
   width: 20%;
   text-align: center;
   padding: 15px;
-}
+} 
 
 /* Page 2 variables */
-
+ 
 #gameBoard{
   position: absolute;
   border: white 2px solid;
@@ -60,8 +60,8 @@ html{
   min-height: 90vh;
 }
 
-.cards{
-  height: 275px;
+/* .cards{ */
+  /* height: 275px;
   width: 200px;
   background-color: #e61c1c;
   background-image: radial-gradient(circle, #f5f5f5 20%, transparent 10%), radial-gradient(circle, #f5f5f5 20%, transparent 10%);
@@ -71,9 +71,9 @@ html{
   border: solid white 9px;
   float: left;
   margin: 30px;
-}
+}  */
 
-.cards2{
+/* .cards2{
   height: 275px;
   width: 200px;
   background: url(../img/jessica-weiller-kZ8dyUT0h30-unsplash.jpg) no-repeat center center; 
@@ -85,7 +85,7 @@ html{
   border: solid white 9px;
   float: left;
   margin: 30px;
-}
+} */
 
 #infoDiv{
   width: 100px;
@@ -94,6 +94,71 @@ html{
   height: 180px;
   bottom: 0;
   right: 0;
+} 
+
+
+/* This is to flip cards on flip click */
+/* Still working on it, please dont mess w it as im still making images fit*/
+.memory-game {
+  width: 1280px;
+  height: 890px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 1000px;
+border: none;
+}
+
+.memory-card {
+  border: none;
+  width: calc(15% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 10px;
+  margin-left: 30px;
+  margin-right: 30px;
+  position: relative;
+  transform: scale(1);
+  transform-style: preserve-3d;
+  transition: transform .5s;
+}
+
+.memory-card:active {
+  transform: scale(0.97);
+  transition: transform .2s;
+  border: none;
+}
+
+.memory-card.flip {
+  border: none;
+  transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  border-radius: 5px;
+  background:transparent;
+  border: none;
+  backface-visibility: hidden;
+}
+
+.front-face {
+  transform: rotateY(180deg);
+  border: none;
+}
+
+.hide-it{
+
+ animation: hide 5s 1 forwards;
+
+}
+
+@keyframes hide {
+  from {opacity: 1;}
+  to{opacity: 0.0;}
 }
 
 /* Page 3 styles */
