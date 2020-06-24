@@ -13,7 +13,7 @@
 // -Target HTML ID _________ where the user name will be entered
 // -form validation will prevent blank space only
 
-// TODO: User Name will be saved to local storage
+// User Name will be saved to local storage // Completed in Card 4
 // -new constructor function created for User (User Name / Difficulty Selected / Theme Selected / Final Time ((Array as Stretch Goal)))
 
 // =====================================================================================
@@ -44,13 +44,13 @@ assignDifficultyToUser();
 // TODO: Difficulty Selector will default to the ‘easiest’ option if no choice is made.
 // -Set default value in Constructor Function
 
-// TODO: Difficulty Selection will be saved to local storage.
+// Difficulty Selection will be saved to local storage. // Included in the gameStart variable/beginningTheGame function. 
 // -Will take place with 'Begin the Game' Button actions
 
 // =====================================================================================
 // ====================================Card 4 - Paul ===========================================
 
-// TODO: Provide a button with text indicating that it will ‘Begin the Game’
+// Provide a button with text indicating that it will ‘Begin the Game’
 // -Target HTML ID ___________ where the button to begin the game will exist
 
 function User(name, difficulty, theme) {
