@@ -24,16 +24,26 @@ console.log('This is when we land on the page but not yet started playing: ' + a
 
 // ====================================Card 5 - Paul====================================
 
-// TODO: Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card)
-// Fill the board with the number and style of cards selected on the landing page
-// -Retrieve and parse User Object from local storage
-// -Fill game board with Style and Difficulty settings from User Object
-// -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor
-// -Fill Array B with an exact copy of Array A cards
-// -Pull from Array A & B to fill game grid
+// Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card) // Wrapped into other functions
+
+var userFromLocal = localStorage.getItem('userData');
+var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object from local storage
+
+
+// -Fill game board with Style and Difficulty settings from User Object: Wrapped into other functions
+// -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor: went different direction for logic, no long needed.
+// -Fill Array B with an exact copy of Array A cards: went different direction for logic, no long needed.
+// -Pull from Array A & B to fill game grid // went different direction for logic, no long needed.
 
 // Append name & difficulty & button (Go Home) in a sidebar
-// -Preferences will be retrieved from parsed User Object (already destringifyed above)
+
+var sidebarUsername = document.getElementById('name');
+sidebarUsername.textContent = gamePlayer.name;
+
+var sidebarDifficulty = document.getElementById('mode');
+sidebarDifficulty.textContent = gamePlayer.difficulty;
+
+// -Preferences will be retrieved from parsed User Object - DONE already destringifyed above)
 
 // TODO: Render a timer that is set to 0:00 and will start upon first click.
 // - Timer will be located in the sidebar

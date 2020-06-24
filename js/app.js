@@ -44,7 +44,7 @@ assignDifficultyToUser();
 // TODO: Difficulty Selector will default to the ‘easiest’ option if no choice is made.
 // -Set default value in Constructor Function
 
-// Difficulty Selection will be saved to local storage. // Included in the gameStart variable/beginningTheGame function. 
+// Difficulty Selection will be saved to local storage. // Included in the gameStart variable/beginningTheGame function.
 // -Will take place with 'Begin the Game' Button actions
 
 // =====================================================================================
@@ -65,9 +65,24 @@ gameStart.addEventListener('submit', beginningTheGame);
 function beginningTheGame(click){
   click.preventDefault();
 
+
   var newUsername = click.target.fname.value; // OR User.name = ...
   var newThemeSelect = click.target.theme.value; // OR User.name = ...
   var newDifficultySelect = click.target.mode.value; // OR difficultySelect = ...
+
+  while (newUsername === '') {
+    newUsername = prompt('Hi! Enter your name so we can get this party started!');
+  }
+
+  while (newThemeSelect === '') {
+    alert('Hi '+ newUsername + '! Make sure to select a theme.');
+    return;
+  }
+
+  while (newDifficultySelect === '') {
+    alert('Hi '+ newUsername + '! Make sure to select a difficulty.');
+    return;
+  }
 
   var newUser = new User(newUsername, newDifficultySelect, newThemeSelect);
 
