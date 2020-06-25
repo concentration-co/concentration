@@ -133,7 +133,10 @@ a {
   font-family: 'Pacifico', cursive;
 }
 
-
+h4 {
+  letter-spacing: 2px;
+  margin-top: 3px;
+}
 
 /* Page 1 variables */
 
@@ -325,6 +328,12 @@ margin-left: 130px;
   background-color: teal;
   animation: bouncy 5s infinite linear;
   position:relative;
+  border-radius: 4px;
+  color: white;
+  border-style: none;
+  font-family: 'Pacifico', cursive;
+  padding: 3px;
+  font-size: larger;
 }
 
 @keyframes bouncy {
@@ -370,3 +379,35 @@ position: absolute;
   background-color: rgb(240, 137, 137);
 }
 
+#obrien-blurb {
+  opacity: 0%;
+}
+
+#obrien-blurb:hover {
+  /* animation-duration: 3s; */
+  /* animation-name: bioslideout; */
+  animation: bioslideout 1.5s forwards ease-in;
+}
+
+@keyframes bioslideout {
+  0% {
+    opacity: 0%;
+    transform: translateX(150%);
+  }
+  /* 50%{
+    transform: translateX(-8%);
+  }
+  65%{
+    transform: translateX(-20%);
+  }
+  80%{
+    transform: translateX(-60%);
+  } */
+  95%{
+    transform: translateX(-160%);
+  }
+	100% {
+    opacity: 100%;
+		transform: translateX(-150%);
+	}
+}
