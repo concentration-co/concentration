@@ -76,7 +76,8 @@ if (mode === 'easy'){
   cardsDisplayed = 20;
   maxPair = 10;
 }
-for (i = 0; i < allCards.length; i++){
+
+for (i = 0; i < cards.length; i++){
   cards[i].classList.remove('never-show');
 }
 
@@ -146,6 +147,7 @@ function unflipCards() {
     resetBoard();
   }, 1500);
 }
+
 
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
