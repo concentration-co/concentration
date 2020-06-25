@@ -254,7 +254,7 @@ h4 {
   position: absolute;
   font-size: smaller;
   margin-top: 100px;
-margin-left: -40px;
+margin-left: -21px;
 border-radius: 9%;
 }
  
@@ -269,6 +269,12 @@ border-radius: 9%;
   height: 180px;
   bottom: 0;
   right: 0;
+  color: darkblue;
+  font-weight: bolder;
+  font-size: large;
+  background-color: #d3efdf;
+  background-image: url("data:image/svg+xml,%3Csvg width='16' height='20' viewBox='0 0 16 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d83720' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M8 0v20L0 10M16 0v10L8 0M16 10v10H8'/%3E%3C/g%3E%3C/svg%3E");
+  border: white solid 3px;
 } 
 
 
@@ -300,6 +306,7 @@ border-radius: 9%;
   transition: transform .5s;
 }
 
+
 .memory-card:active {
   transform: scale(0.97);
   transition: transform .2s;
@@ -320,7 +327,10 @@ border-radius: 9%;
   border-radius: 5px;
   background: transparent;
   border: none;
+  background-color: white;
   backface-visibility: hidden;
+  border-radius: 10%;
+  border: solid 1px white;
 }
 
 .front-face {
