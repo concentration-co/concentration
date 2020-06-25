@@ -60,7 +60,7 @@ function User(name, difficulty, theme) {
   this.finalTimes = []; // where to collect their times/scores
 }
 
-var gameStart = document.getElementById('subButton');
+var gameStart = document.getElementById('nameForm');
 gameStart.addEventListener('submit', beginningTheGame);
 function beginningTheGame(click){
   click.preventDefault();
