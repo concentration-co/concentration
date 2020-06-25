@@ -9,15 +9,10 @@ var endTime;
 
 var clickCounter = 0;
 var pairCounter = 0;
-// var maxPair = 1;
-// TODO: currently, maxPair is hard coded for a 6 pair / 12 card board.  will need to make this variable dynamic if/when this changes
 
-// this makes it so that we only set start time once
-
+// This start time tells us when we arrive at the page
 var arrivedTime = new Date();
 
-// Jen, this start time tells us when we arrive at the page
-// Take the final pair time and substract from startTime to get the "score"
 
 console.log('This is when we land on the page but not yet started playing: ' + arrivedTime);
 
@@ -32,11 +27,10 @@ var userData = JSON.parse(stringyUser);
 
 var userName = userData.name;
 var mode = userData.difficulty;
+var theme = userData.theme;
 
 // -Fill game board with Style and Difficulty settings from User Object: Wrapped into other functions
 // -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor: went different direction for logic, no long needed.
-
-
 
 // -Fill Array B with an exact copy of Array A cards: went different direction for logic, no long needed.
 // -Pull from Array A & B to fill game grid // went different direction for logic, no long needed.
@@ -62,7 +56,7 @@ for (var i = 0; i < allCards.length; i++){
   allCards[i].classList.add('never-show');
 }
 
-// card flip func:
+// Mode Selection applied to deck=======================
 if (mode === 'easy'){
   var cards = document.querySelectorAll('.easy');
   var cardsDisplayed = 12;
@@ -77,9 +71,34 @@ if (mode === 'easy'){
   maxPair = 10;
 }
 
+// Theme Selection applied to deck=========================
+
+
+function setThemeRed(){
+  for (var i = 0; i<cards.length; i++){
+    cards[i].lastElementChild.src = 'img/red.jpg';
+  }
+}
+
+function setThemeBlue(){
+  for (var i = 0; i<cards.length; i++){
+    cards[i].lastElementChild.src = 'img/blue.jpg';
+  }
+}
+
+if (theme === 'red'){
+  setThemeRed();
+} else if (theme === 'blue'){
+  setThemeBlue();
+}
+
+// Display Active Cards=====================================
+
 for (i = 0; i < cards.length; i++){
   cards[i].classList.remove('never-show');
 }
+
+// Card Flip Function========================================
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -116,11 +135,7 @@ function checkForMatch() {
 
 function disableCards() {
   pairCounter++;
-
-  // Jen, make it so that the counter is what tells you when to go to next page: counter = total pairs to match and when met logic to go to about
-
-  // JC: Added a second counter and renamed both - clickCounter will capture the start time, pairCounter will log successful matches and max out at all pairs picked, triggering the end of game conditions
-
+  // pairCounter will count increase with each successful match until it reaches maxPair for the chosen mode
 
   console.log('Game time at this match is: ' + startTime);
 
@@ -166,12 +181,8 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // =====================================================================================
 // ====================================Card 7 - Jen===========================================
 
-// Timer stops when the last pair is confirmed as a match and all cards have been removed from gameplay
-// -Stop Timer : There is no timer running per se, but a final time is captured and recorded
-// -Assign Final Time value to userData.finalTimes - DONE
-// -Remove event listener (Optional)
 function checkWinCondition(){
-// When all pairs are selected (currently hard coded as pairCounter === maxPair) a time stamp is captured
+// When all pairs are selected (pairCounter === maxPair, based on mode)
   if (pairCounter === maxPair){
     endTime = new Date();
     console.log('End Time:', endTime);
