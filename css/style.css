@@ -309,6 +309,10 @@ margin-left: 130px;
   border: none;
 }
 
+.never-show{
+  display: none;
+}
+
 .hide-it{
 
  animation: hide 5s 1 forwards;

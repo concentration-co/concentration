@@ -89,7 +89,7 @@ function beginningTheGame(click){
   var stringifiedUser = JSON.stringify(newUser);
   localStorage.setItem('userData', stringifiedUser);
 
-  alert('Okay ' + newUser.name + ' you are ready to play the game? It starts soon as you push the button!');
+  alert('Okay ' + newUser.name + ' are you ready to play the game? It starts soon as you push the button!');
 
   window.location.href = 'game.html';
 }
