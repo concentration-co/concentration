@@ -9,7 +9,7 @@ var endTime;
 
 var clickCounter = 0;
 var pairCounter = 0;
-var maxPair = 1;
+// var maxPair = 1;
 // TODO: currently, maxPair is hard coded for a 6 pair / 12 card board.  will need to make this variable dynamic if/when this changes
 
 // this makes it so that we only set start time once
@@ -26,22 +26,28 @@ console.log('This is when we land on the page but not yet started playing: ' + a
 
 // Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card) // Wrapped into other functions
 
-var userFromLocal = localStorage.getItem('userData');
-var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object from local storage
 
+var stringyUser = localStorage.getItem('userData');
+var userData = JSON.parse(stringyUser);
+
+var userName = userData.name;
+var mode = userData.difficulty;
 
 // -Fill game board with Style and Difficulty settings from User Object: Wrapped into other functions
 // -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor: went different direction for logic, no long needed.
+
+
+
 // -Fill Array B with an exact copy of Array A cards: went different direction for logic, no long needed.
 // -Pull from Array A & B to fill game grid // went different direction for logic, no long needed.
 
 // Append name & difficulty & button (Go Home) in a sidebar
 
 var sidebarUsername = document.getElementById('name');
-sidebarUsername.textContent = gamePlayer.name;
+sidebarUsername.textContent = userName;
 
 var sidebarDifficulty = document.getElementById('mode');
-sidebarDifficulty.textContent = gamePlayer.difficulty;
+sidebarDifficulty.textContent = mode;
 
 // -Preferences will be retrieved from parsed User Object - DONE already destringifyed above)
 
@@ -51,8 +57,28 @@ sidebarDifficulty.textContent = gamePlayer.difficulty;
 // =====================================================================================
 // ====================================Card 6 - Rob===========================================
 
+var allCards = document.querySelectorAll('.memory-card');
+for (var i = 0; i < allCards.length; i++){
+  allCards[i].classList.add('never-show');
+}
+
 // card flip func:
-var cards = document.querySelectorAll('.memory-card');
+if (mode === 'easy'){
+  var cards = document.querySelectorAll('.easy');
+  var cardsDisplayed = 12;
+  var maxPair = 6;
+} else if (mode === 'normal'){
+  cards = document.querySelectorAll('.normal');
+  cardsDisplayed = 16;
+  maxPair = 8;
+} else if (mode === 'hard'){
+  cards = document.querySelectorAll('.hard');
+  cardsDisplayed = 20;
+  maxPair = 10;
+}
+for (i = 0; i < allCards.length; i++){
+  cards[i].classList.remove('never-show');
+}
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -128,7 +154,7 @@ function resetBoard() {
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+    let randomPos = Math.floor(Math.random() * cardsDisplayed);
     card.style.order = randomPos;
   });
 })();
@@ -155,10 +181,6 @@ function checkWinCondition(){
     var elapsedTime = numEndTime-numStartTime;
     var timeInSec = elapsedTime/1000;
     console.log('Elapsed Time:', timeInSec);
-
-    var stringyUser = localStorage.getItem('userData');
-    var userData = JSON.parse(stringyUser);
-
     userData.finalTimes.push(timeInSec);
     // At this point, we have updated all necessary userData information and are ready to re-stringify it and send it back to local storage
     stringyUser = JSON.stringify(userData);
