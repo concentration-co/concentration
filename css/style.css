@@ -399,25 +399,26 @@ position: absolute;
 .aboutText {
   background-color: transparent;
   width: 100%;
-  height: 100%;
-  color: transparent;
+  height: 45%;
+
   font-size: x-large;
   margin-left: -139px;
-  margin-top: 96px;
+  margin-top: -45px;
+  margin-bottom: 10px;
   letter-spacing: 2px;
   padding: 7px;
 }
 
 #aboutMe1Text {
-  color: transparent;
+
 }
 
 #aboutMe2Text {
-  color: transparent;
+
 }
 
 #aboutMe3Text {
-  color: transparent;
+
 }
 
 #aboutMe1{

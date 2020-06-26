@@ -1,7 +1,6 @@
 'use strict';
 // ====================================Card 8 - Jen===========================================
 
-// TODO: Fill results will display the User Name, Difficulty, and Final Time
 displayResults();
 
 function displayResults(){
