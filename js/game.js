@@ -37,11 +37,11 @@ var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object f
 
 // Append name & difficulty & button (Go Home) in a sidebar
 
-var sidebarUsername = document.getElementById('name');
-sidebarUsername.textContent = gamePlayer.name;
+// var sidebarUsername = document.getElementById('name');
+// sidebarUsername.textContent = gamePlayer.name;
 
-var sidebarDifficulty = document.getElementById('mode');
-sidebarDifficulty.textContent = gamePlayer.difficulty;
+// var sidebarDifficulty = document.getElementById('mode');
+// sidebarDifficulty.textContent = gamePlayer.difficulty;
 
 // -Preferences will be retrieved from parsed User Object - DONE already destringifyed above)
 
