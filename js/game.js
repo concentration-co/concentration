@@ -9,15 +9,10 @@ var endTime;
 
 var clickCounter = 0;
 var pairCounter = 0;
-var maxPair = 1;
-// TODO: currently, maxPair is hard coded for a 6 pair / 12 card board.  will need to make this variable dynamic if/when this changes
 
-// this makes it so that we only set start time once
-
+// This start time tells us when we arrive at the page
 var arrivedTime = new Date();
 
-// Jen, this start time tells us when we arrive at the page
-// Take the final pair time and substract from startTime to get the "score"
 
 console.log('This is when we land on the page but not yet started playing: ' + arrivedTime);
 
@@ -26,22 +21,27 @@ console.log('This is when we land on the page but not yet started playing: ' + a
 
 // Card Constructor must exist (Title, Source - url - front of card , Theme - var - back of card) // Wrapped into other functions
 
-var userFromLocal = localStorage.getItem('userData');
-var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object from local storage
 
+var stringyUser = localStorage.getItem('userData');
+var userData = JSON.parse(stringyUser);
+
+var userName = userData.name;
+var mode = userData.difficulty;
+var theme = userData.theme;
 
 // -Fill game board with Style and Difficulty settings from User Object: Wrapped into other functions
 // -Based on Difficulty, fill Array A with Difficulty # of Cards from Card Constructor: went different direction for logic, no long needed.
+
 // -Fill Array B with an exact copy of Array A cards: went different direction for logic, no long needed.
 // -Pull from Array A & B to fill game grid // went different direction for logic, no long needed.
 
 // Append name & difficulty & button (Go Home) in a sidebar
 
-// var sidebarUsername = document.getElementById('name');
-// sidebarUsername.textContent = gamePlayer.name;
+var sidebarUsername = document.getElementById('name');
+sidebarUsername.textContent = userName;
 
-// var sidebarDifficulty = document.getElementById('mode');
-// sidebarDifficulty.textContent = gamePlayer.difficulty;
+var sidebarDifficulty = document.getElementById('mode');
+sidebarDifficulty.textContent = mode;
 
 // -Preferences will be retrieved from parsed User Object - DONE already destringifyed above)
 
@@ -51,8 +51,54 @@ var gamePlayer = JSON.parse(userFromLocal); // -Retrieve and parse User Object f
 // =====================================================================================
 // ====================================Card 6 - Rob===========================================
 
-// card flip func:
-var cards = document.querySelectorAll('.memory-card');
+var allCards = document.querySelectorAll('.memory-card');
+for (var i = 0; i < allCards.length; i++){
+  allCards[i].classList.add('never-show');
+}
+
+// Mode Selection applied to deck=======================
+if (mode === 'easy'){
+  var cards = document.querySelectorAll('.easy');
+  var cardsDisplayed = 12;
+  var maxPair = 6;
+} else if (mode === 'normal'){
+  cards = document.querySelectorAll('.normal');
+  cardsDisplayed = 16;
+  maxPair = 8;
+} else if (mode === 'hard'){
+  cards = document.querySelectorAll('.hard');
+  cardsDisplayed = 20;
+  maxPair = 10;
+}
+
+// Theme Selection applied to deck=========================
+
+
+function setThemeRed(){
+  for (var i = 0; i<cards.length; i++){
+    cards[i].lastElementChild.src = 'img/red.jpg';
+  }
+}
+
+function setThemeBlue(){
+  for (var i = 0; i<cards.length; i++){
+    cards[i].lastElementChild.src = 'img/blue.jpg';
+  }
+}
+
+if (theme === 'red'){
+  setThemeRed();
+} else if (theme === 'blue'){
+  setThemeBlue();
+}
+
+// Display Active Cards=====================================
+
+for (i = 0; i < cards.length; i++){
+  cards[i].classList.remove('never-show');
+}
+
+// Card Flip Function========================================
 
 var hasFlippedCard = false;
 var lockBoard = false;
@@ -89,11 +135,7 @@ function checkForMatch() {
 
 function disableCards() {
   pairCounter++;
-
-  // Jen, make it so that the counter is what tells you when to go to next page: counter = total pairs to match and when met logic to go to about
-
-  // JC: Added a second counter and renamed both - clickCounter will capture the start time, pairCounter will log successful matches and max out at all pairs picked, triggering the end of game conditions
-
+  // pairCounter will count increase with each successful match until it reaches maxPair for the chosen mode
 
   console.log('Game time at this match is: ' + startTime);
 
@@ -121,6 +163,7 @@ function unflipCards() {
   }, 1500);
 }
 
+
 function resetBoard() {
   [hasFlippedCard, lockBoard] = [false, false];
   [firstCard, secondCard] = [null, null];
@@ -128,7 +171,7 @@ function resetBoard() {
 
 (function shuffle() {
   cards.forEach(card => {
-    let randomPos = Math.floor(Math.random() * 12);
+    let randomPos = Math.floor(Math.random() * cardsDisplayed);
     card.style.order = randomPos;
   });
 })();
@@ -138,12 +181,8 @@ cards.forEach(card => card.addEventListener('click', flipCard));
 // =====================================================================================
 // ====================================Card 7 - Jen===========================================
 
-// Timer stops when the last pair is confirmed as a match and all cards have been removed from gameplay
-// -Stop Timer : There is no timer running per se, but a final time is captured and recorded
-// -Assign Final Time value to userData.finalTimes - DONE
-// -Remove event listener (Optional)
 function checkWinCondition(){
-// When all pairs are selected (currently hard coded as pairCounter === maxPair) a time stamp is captured
+// When all pairs are selected (pairCounter === maxPair, based on mode)
   if (pairCounter === maxPair){
     endTime = new Date();
     console.log('End Time:', endTime);
@@ -155,10 +194,6 @@ function checkWinCondition(){
     var elapsedTime = numEndTime-numStartTime;
     var timeInSec = elapsedTime/1000;
     console.log('Elapsed Time:', timeInSec);
-
-    var stringyUser = localStorage.getItem('userData');
-    var userData = JSON.parse(stringyUser);
-
     userData.finalTimes.push(timeInSec);
     // At this point, we have updated all necessary userData information and are ready to re-stringify it and send it back to local storage
     stringyUser = JSON.stringify(userData);
