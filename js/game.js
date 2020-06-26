@@ -38,9 +38,11 @@ var theme = userData.theme;
 // Append name & difficulty & button (Go Home) in a sidebar
 
 var sidebarUsername = document.getElementById('name');
+userName = userName.charAt(0).toUpperCase() + userName.slice(1); // ensures uppercasing of first letter
 sidebarUsername.textContent = userName;
 
 var sidebarDifficulty = document.getElementById('mode');
+mode = mode.charAt(0).toUpperCase() + mode.slice(1); // ensures uppercasing of first letter
 sidebarDifficulty.textContent = mode;
 
 // -Preferences will be retrieved from parsed User Object - DONE already destringifyed above)
