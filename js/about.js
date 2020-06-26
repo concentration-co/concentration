@@ -1,7 +1,7 @@
 'use strict';
 // ====================================Card 8 - Jen===========================================
 
-TODO: // Fill results will display the User Name, Difficulty, and Final Time
+// TODO: Fill results will display the User Name, Difficulty, and Final Time
 displayResults();
 
 function displayResults(){
@@ -16,6 +16,8 @@ function displayResults(){
   var mode = userData.difficulty;
   var score = userData.finalTimes[0] + ' seconds';
   console.log('User Data Accessed:', name +' '+ mode +' '+ score);
+
+  mode = mode.charAt(0).toUpperCase() + mode.slice(1); // ensures uppercasing of first letter
 
   // -Add relevant content to results form on about.html
   var targetName = document.getElementById('resultName');
