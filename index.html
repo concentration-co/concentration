@@ -1,66 +1,112 @@
 <!DOCTYPE html>
+<!--Done: Create  HTML Skeleton -->
+
+<!--Done: Create Form -->
+
+<!-- Jen TODO: Apply Styling -->
+<!-- Jen TODO: Include Instructions Paragraph -->
+
+<!-- Paul: Create Button -->
+
+<!-- Paul: Prevent Default Click -->
+
+<!-- Rob TODO: Apply Theme -->
 
 <html lang='en'>
 
 <head>
+
   <meta charset='UTF-8'>
+
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+
   <link rel='stylesheet' href='css/style.css'>
-  <script src="js/jquery-3.5.1.min.js"></script>
-  <title>title</title>
+
+  <title>Concentration Cascadia</title>
 
 </head>
 
 <body>
+  
   <div id='wrapperDiv'>
+
+    <div id='wrapperDiv2'>
+    
     <header>
 
-      <h1>Instrucs</h1>
-      <nav>
-      </nav>
+      <h1>Cascadia Concentration</h1>
+      
     </header>
+    
     <main>
-<div id='nameInputFormDiv'>
+<div id='homeHolder'>
 
+<div id="picLeft"></div>
+  <div id='instructions'>
 
-      
-  <form id='nameForm' action="/action_page.php">
+  <h4>How to Play</h4>
+<br>
+<!-- <br> -->
+  <hr id = 'instructionline'>
+  <p>Cascadia Concentration! Can you take in all the beauty and still remember where each of the cards are? There are two of each card on the next screen. When you click on a photo, you'll see the front of the card, then you pick a second card. if they match, they come off the board, and that's one pair down! You win after the last pair has been correctly picked. So get out their and <b>concentrate on Cascadia</b>!</p>
+  <br>
+  <form id='nameForm' class='forms'>
 
-        <label for="fname">First name:</label><br>
-        
-        <input type="text" id="fname" name="fname" value="John"><br><br>
-        
-        <label for="theme">Select theme:</label><br>
-        
-        <input type="radio" id="male" name="theme" value="red">
-        
-        <label for="theme">Red</label><br>
-        
-        <input type="radio" id="male" name="theme" value="blue">
-        
-        <label for="theme">Blue</label><br><br>
-      
-        <label for="mode">Select mode</label><br>
-      
-        <input type="radio" id="easy" name="mode" value="easy">
-      
-        <label for="mode">easy</label><br>
-      
-        <input type="radio" id="hard" name="mode" value="normal">
-      
-        <label for="mode">normal</label><br><br>
-      
-        <input type="submit" value="Submit">
-      
-      </form> 
+    <label for="fname">First name:</label>
+    
+    <input type="text" id="fname" name="fname"  required>
+    
+    <span class = 'spaceholder'>
 
-      </main>
+    <label for="theme">Select theme:</label>
+    
+    <input type="radio" id="red" name="theme" value="red">
+    
+    <label for="theme">Red</label>
+    
+    <input type="radio" id="blue" name="theme" value="blue">
+    
+    <label for="theme">Blue</label><br><br>
+
+    </span>
+
+    <span class = 'spaceholder' id = 'modeSpan'>
+
+    <label for="mode">Select mode</label>
+  
+    <input type="radio" id="easy" name="mode" value="easy">
+  
+    <label for="mode">Easy</label>
+  
+    <input type="radio" id="normal" name="mode" value="normal">
+  
+    <label for="mode">Normal</label>
+    
+    <input type="radio" id="hard" name="mode" value="hard">
+  
+    <label for="mode">Hard</label>
+    <br>
+    <br>
+
+    <input id='subButton' class="button1 bouncy" type="submit" value="Enter">
+
+  </form>
+</div>
+  <div id='rightPic'>
+  </div>
+</div>
     </main>
+   
     <footer>
 
     </footer>  
-  </div>
+  
+    </div>
+
+    </div>
+ 
   <script type='text/javascript' src='js/app.js'></script>
+
 </body>
 
 </html>
